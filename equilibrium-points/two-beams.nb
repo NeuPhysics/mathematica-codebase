@@ -1,0 +1,1509 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     54311,       1500]
+NotebookOptionsPosition[     51923,       1417]
+NotebookOutlinePosition[     52310,       1434]
+CellTagsIndexPosition[     52267,       1431]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"psiR", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"psiReR", "+", 
+     RowBox[{"I", " ", "psiReI"}]}], ",", 
+    RowBox[{"psiRxR", "+", 
+     RowBox[{"I", " ", "psiRxI"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"psiRC", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"psiReR", "-", 
+     RowBox[{"I", " ", "psiReI"}]}], ",", 
+    RowBox[{"psiRxR", "-", 
+     RowBox[{"I", " ", "psiRxI"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"psiL", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"psiLeR", "+", 
+     RowBox[{"I", " ", "psiLeI"}]}], ",", 
+    RowBox[{"psiLxR", "+", 
+     RowBox[{"I", " ", "psiLxI"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"psiLC", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"psiLeR", "-", 
+     RowBox[{"I", " ", "psiLeI"}]}], ",", 
+    RowBox[{"psiLxR", "-", 
+     RowBox[{"I", " ", "psiLxI"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"psi", "=", 
+  RowBox[{
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"psiR", "+", "psiRC"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"psiR", "-", "psiRC"}], ")"}], "/", "I"}], ",", 
+     RowBox[{"psiL", "+", "psiLC"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"psiL", "-", "psiLC"}], ")"}], "/", "I"}]}], "]"}], "/", 
+   "2"}]}]}], "Input",
+ CellChangeTimes->{{3.701456812889998*^9, 3.701456838759426*^9}, {
+  3.70146108937232*^9, 3.701461118425757*^9}, {3.701461239743929*^9, 
+  3.7014612585814743`*^9}, {3.7014612920293083`*^9, 3.701461381188751*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[ImaginaryI]", " ", "psiReI"}], "+", "psiReR"}], ",", 
+   RowBox[{
+    RowBox[{"\[ImaginaryI]", " ", "psiRxI"}], "+", "psiRxR"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.701456830315317*^9, 3.701456839204935*^9}, 
+   3.701456883624432*^9, 3.701461119081338*^9, 3.701461227615065*^9, 
+   3.701461259217437*^9, {3.701461302630393*^9, 3.701461381602437*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "psiReI"}], "+", "psiReR"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "psiRxI"}], "+", "psiRxR"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.701456830315317*^9, 3.701456839204935*^9}, 
+   3.701456883624432*^9, 3.701461119081338*^9, 3.701461227615065*^9, 
+   3.701461259217437*^9, {3.701461302630393*^9, 3.701461381612299*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[ImaginaryI]", " ", "psiLeI"}], "+", "psiLeR"}], ",", 
+   RowBox[{
+    RowBox[{"\[ImaginaryI]", " ", "psiLxI"}], "+", "psiLxR"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.701456830315317*^9, 3.701456839204935*^9}, 
+   3.701456883624432*^9, 3.701461119081338*^9, 3.701461227615065*^9, 
+   3.701461259217437*^9, {3.701461302630393*^9, 3.701461381619177*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLeI"}], "+", "psiLeR"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLxI"}], "+", "psiLxR"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.701456830315317*^9, 3.701456839204935*^9}, 
+   3.701456883624432*^9, 3.701461119081338*^9, 3.701461227615065*^9, 
+   3.701461259217437*^9, {3.701461302630393*^9, 3.701461381626006*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "psiReR", ",", "psiRxR", ",", "psiReI", ",", "psiRxI", ",", "psiLeR", ",", 
+   "psiLxR", ",", "psiLeI", ",", "psiLxI"}], "}"}]], "Output",
+ CellChangeTimes->{{3.701456830315317*^9, 3.701456839204935*^9}, 
+   3.701456883624432*^9, 3.701461119081338*^9, 3.701461227615065*^9, 
+   3.701461259217437*^9, {3.701461302630393*^9, 3.701461381632884*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"hvvL", "=", " ", 
+  RowBox[{"muR", " ", "*", " ", 
+   RowBox[{"Outer", "[", 
+    RowBox[{"Times", ",", "psiR", ",", "psiRC"}], "]"}], " ", "*", " ", 
+   "xiL"}]}], "\[IndentingNewLine]", 
+ RowBox[{"hvvR", "=", " ", 
+  RowBox[{"muL", " ", "*", " ", 
+   RowBox[{"Outer", "[", 
+    RowBox[{"Times", ",", "psiL", ",", "psiLC"}], "]"}], " ", "*", " ", 
+   "xiR"}]}]}], "Input",
+ CellChangeTimes->{{3.701456772201273*^9, 3.7014567947442617`*^9}, {
+   3.701456845504919*^9, 3.7014568491125383`*^9}, {3.701457021300455*^9, 
+   3.701457037061298*^9}, {3.701461193958641*^9, 3.701461196419607*^9}, {
+   3.701461262547328*^9, 3.701461269917981*^9}, {3.701462951855392*^9, 
+   3.7014629533004827`*^9}, {3.701463025036208*^9, 3.701463027946759*^9}, 
+   3.701463134815219*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiReI"}], "+", "psiReR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiReI"}], "+", "psiReR"}], ")"}], " ",
+       "xiL"}], ",", 
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiReI"}], "+", "psiReR"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiRxI"}], "+", "psiRxR"}], 
+       ")"}], " ", "xiL"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiReI"}], "+", "psiReR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiRxI"}], "+", "psiRxR"}], ")"}], " ",
+       "xiL"}], ",", 
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiRxI"}], "+", "psiRxR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiRxI"}], "+", "psiRxR"}], ")"}], " ",
+       "xiL"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.70145703736576*^9, 3.7014611204557343`*^9, 
+  3.701461209968919*^9, 3.701461270210487*^9, 3.7014629549258204`*^9, 
+  3.7014630355885897`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLeI"}], "+", "psiLeR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLeI"}], "+", "psiLeR"}], ")"}], " ",
+       "xiR"}], ",", 
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLeI"}], "+", "psiLeR"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLxI"}], "+", "psiLxR"}], 
+       ")"}], " ", "xiR"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLeI"}], "+", "psiLeR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLxI"}], "+", "psiLxR"}], ")"}], " ",
+       "xiR"}], ",", 
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLxI"}], "+", "psiLxR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLxI"}], "+", "psiLxR"}], ")"}], " ",
+       "xiR"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.70145703736576*^9, 3.7014611204557343`*^9, 
+  3.701461209968919*^9, 3.701461270210487*^9, 3.7014629549258204`*^9, 
+  3.701463035598682*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"hL", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", " ", "omegaL"}], " ", 
+    RowBox[{
+     RowBox[{"PauliMatrix", "[", "3", "]"}], "/", "2"}]}], "+", 
+   "hvvL"}]}], "\[IndentingNewLine]", 
+ RowBox[{"hR", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", " ", "omegaR"}], " ", 
+    RowBox[{
+     RowBox[{"PauliMatrix", "[", "3", "]"}], "/", "2"}]}], "+", 
+   "hvvR"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.701456657863514*^9, 3.7014567972669497`*^9}, {
+  3.701457042885716*^9, 3.701457053165584*^9}, {3.7014573216487703`*^9, 
+  3.7014573317254877`*^9}, {3.701463173193424*^9, 3.701463174399542*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["omegaL", "2"]}], "+", 
+      RowBox[{"muR", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", "psiReI"}], "+", "psiReR"}], 
+        ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[ImaginaryI]", " ", "psiReI"}], "+", "psiReR"}], ")"}], 
+       " ", "xiL"}]}], ",", 
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiReI"}], "+", "psiReR"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiRxI"}], "+", "psiRxR"}], 
+       ")"}], " ", "xiL"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muR", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiReI"}], "+", "psiReR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiRxI"}], "+", "psiRxR"}], ")"}], " ",
+       "xiL"}], ",", 
+     RowBox[{
+      FractionBox["omegaL", "2"], "+", 
+      RowBox[{"muR", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", "psiRxI"}], "+", "psiRxR"}], 
+        ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[ImaginaryI]", " ", "psiRxI"}], "+", "psiRxR"}], ")"}], 
+       " ", "xiL"}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.701457051630459*^9, 3.701457053569004*^9}, 
+   3.7014573319469137`*^9, 3.701461121224889*^9, 3.701461272062612*^9, 
+   3.701462955814507*^9, 3.7014630368380136`*^9, 3.701463175527903*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["omegaR", "2"]}], "+", 
+      RowBox[{"muL", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLeI"}], "+", "psiLeR"}], 
+        ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[ImaginaryI]", " ", "psiLeI"}], "+", "psiLeR"}], ")"}], 
+       " ", "xiR"}]}], ",", 
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLeI"}], "+", "psiLeR"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLxI"}], "+", "psiLxR"}], 
+       ")"}], " ", "xiR"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"muL", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLeI"}], "+", "psiLeR"}], 
+       ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[ImaginaryI]", " ", "psiLxI"}], "+", "psiLxR"}], ")"}], " ",
+       "xiR"}], ",", 
+     RowBox[{
+      FractionBox["omegaR", "2"], "+", 
+      RowBox[{"muL", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", "psiLxI"}], "+", "psiLxR"}], 
+        ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[ImaginaryI]", " ", "psiLxI"}], "+", "psiLxR"}], ")"}], 
+       " ", "xiR"}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.701457051630459*^9, 3.701457053569004*^9}, 
+   3.7014573319469137`*^9, 3.701461121224889*^9, 3.701461272062612*^9, 
+   3.701462955814507*^9, 3.7014630368380136`*^9, 3.70146317553881*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqn", "=", 
+  RowBox[{"Join", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"Re", "[", "#", "]"}], "]"}], "\[Equal]", "0"}], "&"}], "/@", 
+     
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"hL", ".", "psiL"}], ",", 
+       RowBox[{"hR", ".", "psiR"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"Im", "[", "#", "]"}], "]"}], "\[Equal]", "0"}], "&"}], "/@", 
+     
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"hL", ".", "psiL"}], ",", 
+       RowBox[{"hR", ".", "psiR"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.701457459574728*^9, 3.701457550993311*^9}, {
+  3.701458459579678*^9, 3.70145846581469*^9}, {3.7014614201812563`*^9, 
+  3.701461465434664*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"omegaL", " ", "psiLeR"}], "2"]}], "+", 
+     RowBox[{"muR", " ", "psiLeR", " ", 
+      SuperscriptBox["psiReI", "2"], " ", "xiL"}], "+", 
+     RowBox[{"muR", " ", "psiLeR", " ", 
+      SuperscriptBox["psiReR", "2"], " ", "xiL"}], "+", 
+     RowBox[{"muR", " ", "psiLxR", " ", "psiReI", " ", "psiRxI", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxI", " ", "psiReR", " ", "psiRxI", " ", "xiL"}],
+      "-", 
+     RowBox[{"muR", " ", "psiLxI", " ", "psiReI", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{
+     "muR", " ", "psiLxR", " ", "psiReR", " ", "psiRxR", " ", "xiL"}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"omegaL", " ", "psiLxR"}], "2"], "+", 
+     RowBox[{"muR", " ", "psiLeR", " ", "psiReI", " ", "psiRxI", " ", "xiL"}],
+      "-", 
+     RowBox[{"muR", " ", "psiLeI", " ", "psiReR", " ", "psiRxI", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxR", " ", 
+      SuperscriptBox["psiRxI", "2"], " ", "xiL"}], "+", 
+     RowBox[{"muR", " ", "psiLeI", " ", "psiReI", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLeR", " ", "psiReR", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxR", " ", 
+      SuperscriptBox["psiRxR", "2"], " ", "xiL"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"omegaR", " ", "psiReR"}], "2"]}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLeI", "2"], " ", "psiReR", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLeR", "2"], " ", "psiReR", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxI", " ", "psiRxI", " ", "xiR"}],
+      "-", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxR", " ", "psiRxI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxI", " ", "psiRxR", " ", "xiR"}],
+      "+", 
+     RowBox[{
+     "muL", " ", "psiLeR", " ", "psiLxR", " ", "psiRxR", " ", "xiR"}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"omegaR", " ", "psiRxR"}], "2"], "-", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxI", " ", "psiReI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxR", " ", "psiReI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxI", " ", "psiReR", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxR", " ", "psiReR", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLxI", "2"], " ", "psiRxR", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLxR", "2"], " ", "psiRxR", " ", "xiR"}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"omegaL", " ", "psiLeI"}], "2"]}], "+", 
+     RowBox[{"muR", " ", "psiLeI", " ", 
+      SuperscriptBox["psiReI", "2"], " ", "xiL"}], "+", 
+     RowBox[{"muR", " ", "psiLeI", " ", 
+      SuperscriptBox["psiReR", "2"], " ", "xiL"}], "+", 
+     RowBox[{"muR", " ", "psiLxI", " ", "psiReI", " ", "psiRxI", " ", "xiL"}],
+      "-", 
+     RowBox[{"muR", " ", "psiLxR", " ", "psiReR", " ", "psiRxI", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxR", " ", "psiReI", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{
+     "muR", " ", "psiLxI", " ", "psiReR", " ", "psiRxR", " ", "xiL"}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"omegaL", " ", "psiLxI"}], "2"], "+", 
+     RowBox[{"muR", " ", "psiLeI", " ", "psiReI", " ", "psiRxI", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLeR", " ", "psiReR", " ", "psiRxI", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxI", " ", 
+      SuperscriptBox["psiRxI", "2"], " ", "xiL"}], "-", 
+     RowBox[{"muR", " ", "psiLeR", " ", "psiReI", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLeI", " ", "psiReR", " ", "psiRxR", " ", "xiL"}],
+      "+", 
+     RowBox[{"muR", " ", "psiLxI", " ", 
+      SuperscriptBox["psiRxR", "2"], " ", "xiL"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"omegaR", " ", "psiReI"}], "2"]}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLeI", "2"], " ", "psiReI", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLeR", "2"], " ", "psiReI", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxI", " ", "psiRxI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxR", " ", "psiRxI", " ", "xiR"}],
+      "-", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxI", " ", "psiRxR", " ", "xiR"}],
+      "+", 
+     RowBox[{
+     "muL", " ", "psiLeI", " ", "psiLxR", " ", "psiRxR", " ", "xiR"}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"omegaR", " ", "psiRxI"}], "2"], "+", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxI", " ", "psiReI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxR", " ", "psiReI", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", "psiLeR", " ", "psiLxI", " ", "psiReR", " ", "xiR"}],
+      "-", 
+     RowBox[{"muL", " ", "psiLeI", " ", "psiLxR", " ", "psiReR", " ", "xiR"}],
+      "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLxI", "2"], " ", "psiRxI", " ", "xiR"}], "+", 
+     RowBox[{"muL", " ", 
+      SuperscriptBox["psiLxR", "2"], " ", "psiRxI", " ", "xiR"}]}], 
+    "\[Equal]", "0"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.70145747879112*^9, 3.701457551375751*^9}, 
+   3.701458467267397*^9, 3.701461122306117*^9, 3.7014612738210983`*^9, 
+   3.701461433164837*^9, 3.701461465817333*^9, 3.701461496916641*^9, 
+   3.7014629567080193`*^9, 3.701463037754158*^9, 3.701463177209032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{"eqn", ",", "psi"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701457552414299*^9, 3.7014575637946568`*^9}, {
+  3.701461475317479*^9, 3.701461475626507*^9}, {3.701461510211215*^9, 
+  3.701461528573885*^9}, {3.701462755025217*^9, 3.7014627641219797`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.701461124255715*^9, 3.701461280461103*^9, 3.701461477209277*^9, {
+   3.701461512845242*^9, 3.7014615300155277`*^9}, {3.701462757258135*^9, 
+   3.701462765476677*^9}, 3.7014630400611963`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"psiReR", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "omega"}], " ", "psiLeI"}], "-", 
+                RowBox[{"2", " ", "muR", " ", "psiLeI", " ", 
+                 SuperscriptBox["psiRxI", "2"], " ", "xiL"}], "+", 
+                TemplateBox[{"8"},
+                 "OutputSizeLimit`Skeleton",
+                 DisplayFunction->(FrameBox[
+                   
+                   RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                   Background -> GrayLevel[0.75], 
+                   BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                   Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                   FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )]}], 
+               
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "2"}], " ", "muR", " ", "psiLxR", " ", "psiRxI",
+                  " ", "xiL"}], "-", 
+                FractionBox[
+                 RowBox[{
+                  SqrtBox["muR"], " ", 
+                  TemplateBox[{"2"},
+                   "OutputSizeLimit`Skeleton",
+                   DisplayFunction->(FrameBox[
+                    
+                    RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                    Background -> GrayLevel[0.75], 
+                    BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                    FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+                  " ", 
+                  SqrtBox[
+                   RowBox[{
+                    RowBox[{"-", "omega"}], "+", 
+                    RowBox[{"2", " ", 
+                    TemplateBox[{"2"},
+                    "OutputSizeLimit`Skeleton",
+                    DisplayFunction->(FrameBox[
+                    
+                    RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                    Background -> GrayLevel[0.75], 
+                    BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                    FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+                    " ", "xiR"}], "+", 
+                    TemplateBox[{"1"},
+                    "OutputSizeLimit`Skeleton",
+                    DisplayFunction->(FrameBox[
+                    
+                    RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                    Background -> GrayLevel[0.75], 
+                    BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                    FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+                    "-", 
+                    RowBox[{"2", " ", "muL", " ", 
+                    SuperscriptBox["psiLxR", "2"], " ", "xiR"}]}]]}], 
+                 RowBox[{
+                  SqrtBox["muL"], " ", 
+                  SqrtBox["xiR"]}]]}]]}], ",", 
+             RowBox[{"psiRxR", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox[
+                SqrtBox[
+                 RowBox[{
+                  RowBox[{"-", "omega"}], "-", 
+                  RowBox[{"2", " ", "muR", " ", 
+                   TemplateBox[{"1"},
+                    "OutputSizeLimit`Skeleton",
+                    DisplayFunction->(FrameBox[
+                    
+                    RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                    Background -> GrayLevel[0.75], 
+                    BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                    FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+                   " ", "xiL"}], "+", 
+                  TemplateBox[{"1"},
+                   "OutputSizeLimit`Skeleton",
+                   DisplayFunction->(FrameBox[
+                    
+                    RowBox[{
+                    "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                    Background -> GrayLevel[0.75], 
+                    BaseStyle -> {
+                    "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                    FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+                  "+", 
+                  RowBox[{"2", " ", "muL", " ", 
+                   SuperscriptBox["psiLeR", "2"], " ", "xiR"}]}]], 
+                RowBox[{
+                 SqrtBox["2"], " ", 
+                 SqrtBox["muR"], " ", 
+                 SqrtBox["xiL"]}]]}]}], ",", 
+             RowBox[{"psiReI", "\[Rule]", 
+              FractionBox[
+               TemplateBox[{"1"},
+                "OutputSizeLimit`Skeleton",
+                DisplayFunction->(FrameBox[
+                  
+                  RowBox[{
+                   "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                  Background -> GrayLevel[0.75], 
+                  BaseStyle -> {
+                   "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                    ShowStringCharacters -> False}, BaselinePosition -> 
+                  Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                  FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], 
+               "psiLxR"]}], ",", 
+             RowBox[{"psiLxI", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox[
+                SqrtBox[
+                 RowBox[{
+                  RowBox[{"-", "omega"}], "+", 
+                  RowBox[{"2", " ", "muL", " ", 
+                   SuperscriptBox["psiLeI", "2"], " ", "xiR"}], "+", 
+                  RowBox[{"2", " ", "muL", " ", 
+                   SuperscriptBox["psiLeR", "2"], " ", "xiR"}], "-", 
+                  RowBox[{"2", " ", "muL", " ", 
+                   SuperscriptBox["psiLxR", "2"], " ", "xiR"}]}]], 
+                RowBox[{
+                 SqrtBox["2"], " ", 
+                 SqrtBox["muL"], " ", 
+                 SqrtBox["xiR"]}]]}]}]}], "}"}], ",", 
+           TemplateBox[{"47"},
+            "OutputSizeLimit`Skeleton",
+            DisplayFunction->(FrameBox[
+              RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}],
+               Background -> GrayLevel[0.75], 
+              BaseStyle -> {
+               "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
+              ContentPadding -> False, FrameMargins -> 1, FrameStyle -> 
+              GrayLevel[0.75], RoundingRadius -> 7]& )], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"psiReR", "\[Rule]", "0"}], ",", 
+             RowBox[{"psiRxR", "\[Rule]", "0"}], ",", 
+             TemplateBox[{"5"},
+              "OutputSizeLimit`Skeleton",
+              DisplayFunction->(FrameBox[
+                
+                RowBox[{
+                 "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                Background -> GrayLevel[0.75], 
+                BaseStyle -> {
+                 "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                  ShowStringCharacters -> False}, BaselinePosition -> 
+                Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], ",", 
+             
+             RowBox[{"psiLxI", "\[Rule]", "0"}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{73., {3., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarCategory",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{61., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 205, 26519909540896491215, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{68., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 205, 26519909540896491215, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{51., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 205, 26519909540896491215, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{92., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Background->RGBColor[0.9657, 0.9753, 0.9802],
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[205]]], "Output",
+ CellChangeTimes->{
+  3.701457574247985*^9, 3.701457979728002*^9, 3.701458777899151*^9, 
+   3.7014611242642603`*^9, 3.701461280470072*^9, 3.701461477361108*^9, {
+   3.701461513027306*^9, 3.7014615301874228`*^9}, {3.701462757522183*^9, 
+   3.701462765631418*^9}, 3.7014630400754642`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NSolve", "[", 
+  RowBox[{
+   RowBox[{"eqn", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"omegaL", "\[Rule]", 
+       RowBox[{"-", "1"}]}], ",", 
+      RowBox[{"omegaR", "\[Rule]", "1"}], ",", 
+      RowBox[{"muL", "\[Rule]", 
+       RowBox[{"-", "10"}]}], ",", 
+      RowBox[{"muR", "\[Rule]", "10"}], ",", 
+      RowBox[{"xiL", "\[Rule]", "0.6"}], ",", 
+      RowBox[{"xiR", "\[Rule]", "0.6"}]}], "}"}]}], ",", "psi", ",", 
+   "Reals"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701457983368627*^9, 3.701458042176367*^9}, {
+  3.7014615590091248`*^9, 3.701461559248749*^9}, {3.701462790658226*^9, 
+  3.701462806022909*^9}, {3.701462842000646*^9, 3.701462843887438*^9}, {
+  3.7014629731325703`*^9, 3.70146297814704*^9}, {3.701463050181119*^9, 
+  3.701463062021665*^9}, {3.701463140246258*^9, 3.7014631436010313`*^9}, {
+  3.701463180690481*^9, 3.701463219414192*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"psiReR", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiRxR", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiReI", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiRxI", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiLeR", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiLxR", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiLeI", "\[Rule]", "0"}], ",", 
+    RowBox[{"psiLxI", "\[Rule]", "0"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7014628282039127`*^9, 3.701462864921694*^9, 3.701462999055852*^9, {
+   3.701463054238923*^9, 3.701463086499113*^9}, 3.7014631653953857`*^9, 
+   3.701463210601192*^9, 3.701463241663271*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"findRootCondition", "=", 
+  RowBox[{"Transpose", "@", 
+   RowBox[{"{", 
+    RowBox[{"psi", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+       "0"}], "}"}]}], "}"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"eqn", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"omega", "\[Rule]", "1"}], ",", 
+      RowBox[{"mu", "\[Rule]", "10"}], ",", 
+      RowBox[{"xi", "\[Rule]", "0.6"}]}], "}"}]}], ",", "findRootCondition"}],
+   "]"}]}], "Input",
+ CellChangeTimes->{{3.701458163272975*^9, 3.7014581804283857`*^9}, {
+   3.70145821589065*^9, 3.701458216147472*^9}, {3.701458269845147*^9, 
+   3.7014583145993*^9}, {3.701458346655802*^9, 3.701458389897759*^9}, {
+   3.701461141563963*^9, 3.701461156775889*^9}, {3.701461586892475*^9, 
+   3.701461592751465*^9}, 3.701462849834117*^9, {3.701462902618627*^9, 
+   3.7014629112624207`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"psiReR", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiRxR", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiReI", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiRxI", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiLeR", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiLxR", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiLeI", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"psiLxI", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.70145816525176*^9, 3.701458180887748*^9}, 
+   3.7014582166154346`*^9, {3.701458272123061*^9, 3.701458299533877*^9}, {
+   3.7014583470274267`*^9, 3.7014583901983013`*^9}, {3.7014610042683287`*^9, 
+   3.701461016746481*^9}, 3.701461076932658*^9, 3.701461135023716*^9, 
+   3.701461596826981*^9, 3.701462865000313*^9, 3.701462902953169*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"psiReR", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiRxR", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiReI", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiRxI", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiLeR", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiLxR", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiLeI", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"psiLxI", "\[Rule]", "0.`"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.70145816525176*^9, 3.701458180887748*^9}, 
+   3.7014582166154346`*^9, {3.701458272123061*^9, 3.701458299533877*^9}, {
+   3.7014583470274267`*^9, 3.7014583901983013`*^9}, {3.7014610042683287`*^9, 
+   3.701461016746481*^9}, 3.701461076932658*^9, 3.701461135023716*^9, 
+   3.701461596826981*^9, 3.701462865000313*^9, 3.701462902960247*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flavor Isospin", "Chapter",
+ CellChangeTimes->{{3.701469135143607*^9, 3.701469139688161*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"polL", "=", 
+  RowBox[{"{", 
+   RowBox[{"polL1", ",", "polL2", ",", "polL3"}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"polR", "=", 
+  RowBox[{"{", 
+   RowBox[{"polR1", ",", "polR2", ",", "polR3"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.701469141608446*^9, 3.70146917061615*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"polL1", ",", "polL2", ",", "polL3"}], "}"}]], "Output",
+ CellChangeTimes->{3.701469172639666*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"polR1", ",", "polR2", ",", "polR3"}], "}"}]], "Output",
+ CellChangeTimes->{3.701469172648013*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"bLR", "=", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"2", "thetav"}], "]"}], ",", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"2", "thetav"}], "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"lLR", "=", 
+  RowBox[{"-", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}]}], "Input",
+ CellChangeTimes->{{3.701469177647348*^9, 3.701469276193246*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"2", " ", "thetav"}], "]"}], ",", 
+   RowBox[{"Cos", "[", 
+    RowBox[{"2", " ", "thetav"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7014692472477617`*^9, 3.701469276828622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7014692472477617`*^9, 3.701469276838472*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqnPol", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", "==", "0"}], "&"}], "/@", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Cross", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"omega", " ", "bLR"}], " ", "+", " ", 
+        RowBox[{"lambda", " ", "lLR"}], " ", "+", " ", 
+        RowBox[{"mu", " ", "xi", " ", "polR"}]}], ",", "polL"}], "]"}], " ", 
+     ",", 
+     RowBox[{"Cross", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"omega", " ", "bLR"}], " ", "+", " ", 
+        RowBox[{"lambda", " ", "lLR"}], " ", "+", " ", 
+        RowBox[{"mu", " ", "xi", " ", "polL"}]}], " ", ",", "polR"}], "]"}]}],
+     " ", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.701469278383678*^9, 3.701469436003282*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"lambda", " ", "polL2"}], "+", 
+     RowBox[{"mu", " ", "polL3", " ", "polR2", " ", "xi"}], "-", 
+     RowBox[{"mu", " ", "polL2", " ", "polR3", " ", "xi"}], "-", 
+     RowBox[{"omega", " ", "polL2", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}], "+", 
+     RowBox[{"omega", " ", "polL3", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "lambda"}], " ", "polL1"}], "-", 
+     RowBox[{"mu", " ", "polL3", " ", "polR1", " ", "xi"}], "+", 
+     RowBox[{"mu", " ", "polL1", " ", "polR3", " ", "xi"}], "+", 
+     RowBox[{"omega", " ", "polL1", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"mu", " ", "polL2", " ", "polR1", " ", "xi"}], "-", 
+     RowBox[{"mu", " ", "polL1", " ", "polR2", " ", "xi"}], "-", 
+     RowBox[{"omega", " ", "polL1", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"lambda", " ", "polR2"}], "-", 
+     RowBox[{"mu", " ", "polL3", " ", "polR2", " ", "xi"}], "+", 
+     RowBox[{"mu", " ", "polL2", " ", "polR3", " ", "xi"}], "-", 
+     RowBox[{"omega", " ", "polR2", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}], "+", 
+     RowBox[{"omega", " ", "polR3", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "lambda"}], " ", "polR1"}], "+", 
+     RowBox[{"mu", " ", "polL3", " ", "polR1", " ", "xi"}], "-", 
+     RowBox[{"mu", " ", "polL1", " ", "polR3", " ", "xi"}], "+", 
+     RowBox[{"omega", " ", "polR1", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "mu"}], " ", "polL2", " ", "polR1", " ", "xi"}], "+", 
+     RowBox[{"mu", " ", "polL1", " ", "polR2", " ", "xi"}], "-", 
+     RowBox[{"omega", " ", "polR1", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", " ", "thetav"}], "]"}]}]}], "\[Equal]", "0"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.701469329728766*^9, 3.701469437751343*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{"eqnPol", ",", 
+   RowBox[{"Join", "[", 
+    RowBox[{"polL", ",", "polR"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701469445554228*^9, 3.701469455663497*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.701469456092317*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polR1", "\[Rule]", 
+      RowBox[{"-", "polL1"}]}], ",", 
+     RowBox[{"polR2", "\[Rule]", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "mu"}], " ", "polL2", " ", "xi"}], "-", 
+        RowBox[{"omega", " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", " ", "thetav"}], "]"}]}]}], 
+       RowBox[{"mu", " ", "xi"}]]}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      FractionBox[
+       RowBox[{"lambda", "-", 
+        RowBox[{"mu", " ", "polL3", " ", "xi"}], "-", 
+        RowBox[{"omega", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "thetav"}], "]"}]}]}], 
+       RowBox[{"mu", " ", "xi"}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polL1", "\[Rule]", "0"}], ",", 
+     RowBox[{"polL3", "\[Rule]", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "lambda"}], " ", "polL2"}], "+", 
+          RowBox[{"omega", " ", "polL2", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"2", " ", "thetav"}], "]"}]}]}], ")"}], " ", 
+        RowBox[{"Csc", "[", 
+         RowBox[{"2", " ", "thetav"}], "]"}]}], "omega"]}], ",", 
+     RowBox[{"polR1", "\[Rule]", "0"}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "lambda"}], " ", "polR2"}], "+", 
+          RowBox[{"omega", " ", "polR2", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"2", " ", "thetav"}], "]"}]}]}], ")"}], " ", 
+        RowBox[{"Csc", "[", 
+         RowBox[{"2", " ", "thetav"}], "]"}]}], "omega"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polL1", "\[Rule]", "0"}], ",", 
+     RowBox[{"polR1", "\[Rule]", "0"}], ",", 
+     RowBox[{"polR2", "\[Rule]", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "mu"}], " ", "polL2", " ", "xi"}], "-", 
+        RowBox[{"omega", " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", " ", "thetav"}], "]"}]}]}], 
+       RowBox[{"mu", " ", "xi"}]]}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      FractionBox[
+       RowBox[{"lambda", "-", 
+        RowBox[{"mu", " ", "polL3", " ", "xi"}], "-", 
+        RowBox[{"omega", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "thetav"}], "]"}]}]}], 
+       RowBox[{"mu", " ", "xi"}]]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701469456100603*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.701469251922531*^9, 3.701469259952858*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"eqnPol", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"omega", "\[Rule]", "1"}], ",", 
+      RowBox[{"mu", "\[Rule]", "20"}], ",", 
+      RowBox[{"xi", "\[Rule]", "0.4"}], ",", 
+      RowBox[{"thetav", "\[Rule]", 
+       RowBox[{"Pi", "/", "6"}]}], ",", 
+      RowBox[{"lambda", "\[Rule]", "5"}]}], "}"}]}], ",", 
+   RowBox[{"Join", "[", 
+    RowBox[{"polL", ",", "polR"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701469513101033*^9, 3.70146954483604*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ratnz"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Solve was unable to solve the system with inexact \
+coefficients. The answer was obtained by solving a corresponding exact system \
+and numericizing the result. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Solve\\\", ButtonNote -> \
+\\\"Solve::ratnz\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.7014695282418737`*^9, 3.701469545166561*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.7014695282418737`*^9, 3.701469545185484*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polR1", "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "1.`"}], " ", "polL1"}]}], ",", 
+     RowBox[{"polR2", "\[Rule]", 
+      RowBox[{"0.0625`", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1.7320508075688772`"}], "-", 
+         RowBox[{"16.`", " ", "polL2"}]}], ")"}]}]}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      RowBox[{"0.0625`", " ", 
+       RowBox[{"(", 
+        RowBox[{"9.`", "\[VeryThinSpace]", "-", 
+         RowBox[{"16.`", " ", "polL3"}]}], ")"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polL1", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"polL3", "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "5.196152422706632`"}], " ", "polL2"}]}], ",", 
+     RowBox[{"polR1", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "5.196152422706632`"}], " ", "polR2"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"polL1", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"polR1", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"polR2", "\[Rule]", 
+      RowBox[{"0.0625`", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1.7320508075688772`"}], "-", 
+         RowBox[{"16.`", " ", "polL2"}]}], ")"}]}]}], ",", 
+     RowBox[{"polR3", "\[Rule]", 
+      RowBox[{"0.0625`", " ", 
+       RowBox[{"(", 
+        RowBox[{"9.`", "\[VeryThinSpace]", "-", 
+         RowBox[{"16.`", " ", "polL3"}]}], ")"}]}]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.701469528284535*^9, 3.7014695451892548`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.06", "*", 
+  RowBox[{"(", 
+   RowBox[{"1.73", "+", "16"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.701534823100491*^9, 3.701534871600552*^9}}],
+
+Cell[BoxData["1.0638`"], "Output",
+ CellChangeTimes->{{3.701534845394187*^9, 3.701534871846525*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1276, 755},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1502, 44, 120, "Input"],
+Cell[2085, 68, 426, 10, 36, "Output"],
+Cell[2514, 80, 468, 12, 36, "Output"],
+Cell[2985, 94, 426, 10, 36, "Output"],
+Cell[3414, 106, 468, 12, 36, "Output"],
+Cell[3885, 120, 388, 7, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4310, 132, 787, 16, 57, "Input"],
+Cell[5100, 150, 1535, 48, 57, "Output"],
+Cell[6638, 200, 1533, 48, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8208, 253, 662, 17, 78, "Input"],
+Cell[8873, 272, 1737, 53, 96, "Output"],
+Cell[10613, 327, 1736, 53, 96, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12386, 385, 905, 27, 78, "Input"],
+Cell[13294, 414, 5870, 144, 549, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19201, 563, 299, 5, 36, "Input"],
+Cell[19503, 570, 615, 12, 29, "Message"],
+Cell[20121, 584, 15800, 369, 244, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35958, 958, 896, 20, 36, "Input"],
+Cell[36857, 980, 658, 15, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37552, 1000, 962, 23, 57, "Input"],
+Cell[38517, 1025, 924, 23, 36, "Output"],
+Cell[39444, 1050, 788, 15, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40269, 1070, 99, 1, 81, "Chapter"],
+Cell[CellGroupData[{
+Cell[40393, 1075, 314, 8, 57, "Input"],
+Cell[40710, 1085, 137, 3, 36, "Output"],
+Cell[40850, 1090, 137, 3, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41024, 1098, 421, 12, 57, "Input"],
+Cell[41448, 1112, 273, 7, 35, "Output"],
+Cell[41724, 1121, 170, 4, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41931, 1130, 748, 21, 36, "Input"],
+Cell[42682, 1153, 2402, 59, 141, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45121, 1217, 215, 5, 36, "Input"],
+Cell[45339, 1224, 442, 9, 29, "Message"],
+Cell[45784, 1235, 2520, 73, 197, "Output"]
+}, Open  ]],
+Cell[48319, 1311, 92, 1, 35, "Input"],
+Cell[CellGroupData[{
+Cell[48436, 1316, 533, 14, 36, "Input"],
+Cell[48972, 1332, 549, 11, 29, "Message"],
+Cell[49524, 1345, 468, 9, 29, "Message"],
+Cell[49995, 1356, 1591, 45, 78, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51623, 1406, 169, 4, 35, "Input"],
+Cell[51795, 1412, 100, 1, 35, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

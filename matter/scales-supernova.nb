@@ -1,0 +1,196 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5399,        187]
+NotebookOptionsPosition[      4603,        155]
+NotebookOutlinePosition[      4991,        172]
+CellTagsIndexPosition[      4948,        169]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"thetaV", "=", 
+  RowBox[{"ArcSin", "[", 
+   RowBox[{
+    SqrtBox["0.093"], "/", "2"}], "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lambda10", "=", "1.2395500000000002`*^-15"}]], "Input",
+ CellChangeTimes->{{3.672058862227396*^9, 3.672058875535225*^9}, {
+  3.6720604606449623`*^9, 3.672060469279812*^9}}],
+
+Cell[BoxData["1.2395500000000002`*^-15"], "Output",
+ CellChangeTimes->{3.6720587947885323`*^9, 3.672058877572102*^9, 
+  3.67206046967715*^9}]
+}, Open  ]],
+
+Cell["\<\
+Size of supernova shock
+choose
+22000km
+1/km = 1.97*10^(-16)MeV\
+\>", "Text",
+ CellChangeTimes->{{3.672058498356444*^9, 3.672058510387377*^9}, {
+  3.672058602613961*^9, 3.6720586168833847`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"kBase", "=", 
+  RowBox[{"2", 
+   RowBox[{"Pi", "/", "22000"}], "*", "1.97", "*", 
+   RowBox[{"10", "^", 
+    RowBox[{"(", 
+     RowBox[{"-", "16"}], ")"}], 
+    RowBox[{"(*", "MeV", "*)"}], 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"Pi", "/", "22000"}], " ", "km"}], "*)"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6720585144908247`*^9, 3.672058543140622*^9}, {
+   3.672058622532926*^9, 3.6720586359155493`*^9}, 3.672058716230133*^9, 
+   3.6720601580884457`*^9}],
+
+Cell[BoxData["5.626306843247174`*^-20"], "Output",
+ CellChangeTimes->{3.672058533308447*^9, 3.6720586362141657`*^9, 
+  3.672058716772007*^9, 3.672060158997624*^9}]
+}, Open  ]],
+
+Cell["\<\
+If we have the first order resonance for this base frequency, we require \
+omegam=kbase, thus omegav is solved from it\
+\>", "Text",
+ CellChangeTimes->{{3.672058673597794*^9, 3.6720587085958548`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"omegavBasePlus", "[", 
+    RowBox[{
+    "lambdaBackground_", ",", "thetaVacuum_", ",", "kBaseFrequency_", ",", 
+     "n_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"lambdaBackground", " ", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", "thetaVacuum"}], "]"}]}], "+", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"n", " ", "kBaseFrequency"}], ")"}], "^", "2"}], "-", 
+      RowBox[{
+       RowBox[{"lambdaBackground", "^", "2"}], " ", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "thetaVacuum"}], "]"}], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.672058710330579*^9, 3.672058743547974*^9}, {
+  3.672059236686522*^9, 3.6720593492392893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"omegavBaseMinus", "[", 
+    RowBox[{
+    "lambdaBackground_", ",", "thetaVacuum_", ",", "kBaseFrequency_", ",", 
+     "n_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"lambdaBackground", " ", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", "thetaVacuum"}], "]"}]}], "-", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"n", " ", "kBaseFrequency"}], ")"}], "^", "2"}], "-", 
+      RowBox[{
+       RowBox[{"lambdaBackground", "^", "2"}], " ", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "thetaVacuum"}], "]"}], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.672059360684657*^9, 3.672059366005115*^9}}],
+
+Cell[TextData[{
+ "For a real ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Omega]", "v"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", we need to have a sufficently large n that satisfies\nn k>\[Lambda] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"sin", "(", 
+    RowBox[{"2", 
+     SubscriptBox["\[Theta]", "v"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.67205947571672*^9, 3.672059523266807*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"omegavBasePlus", "[", 
+  RowBox[{"lambda10", ",", "thetaV", ",", "kbase", ",", "1"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.6720593707469187`*^9, 3.672059431180497*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.1819109250000001`*^-15", "+", 
+  RowBox[{"3.7359171173121764`*^-16", " ", "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{{3.672059390863229*^9, 3.672059431820159*^9}}]
+}, Open  ]]
+},
+WindowSize->{1248, 755},
+WindowMargins->{{15, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 129, 4, 49, "Input"],
+Cell[CellGroupData[{
+Cell[712, 28, 196, 3, 35, "Input"],
+Cell[911, 33, 141, 2, 72, "Output"]
+}, Open  ]],
+Cell[1067, 38, 203, 7, 109, "Text"],
+Cell[CellGroupData[{
+Cell[1295, 49, 495, 13, 35, "Input"],
+Cell[1793, 64, 163, 2, 38, "Output"]
+}, Open  ]],
+Cell[1971, 69, 210, 4, 37, "Text"],
+Cell[2184, 75, 782, 23, 57, "Input"],
+Cell[2969, 100, 732, 22, 57, "Input"],
+Cell[3704, 124, 462, 15, 65, "Text"],
+Cell[CellGroupData[{
+Cell[4191, 143, 196, 4, 36, "Input"],
+Cell[4390, 149, 197, 3, 38, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

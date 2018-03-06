@@ -1,0 +1,628 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20856,        619]
+NotebookOptionsPosition[     19923,        583]
+NotebookOutlinePosition[     20310,        600]
+CellTagsIndexPosition[     20267,        597]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "@", 
+  RowBox[{"NotebookDirectory", "[", "]"}]}]], "Input"],
+
+Cell[BoxData["\<\"/Users/leima/github/neuphysics/codebase/mma/dispersion-\
+relation/boxspectrum\"\>"], "Output",
+ CellChangeTimes->{
+  3.696615260348274*^9, 3.6966979326181507`*^9, 3.696875605266644*^9, 
+   3.697245563722645*^9, 3.697246283559779*^9, 3.69739266381382*^9, 
+   3.6974738489309273`*^9, 3.697814133264941*^9, 3.6979190995005417`*^9, 
+   3.6979195781711073`*^9, 3.697921348000804*^9, 3.697921747747342*^9, 
+   3.6979232444461308`*^9, 3.6985834272581453`*^9, 3.698602334417652*^9, 
+   3.6992042585180597`*^9, 3.699227216071806*^9, 3.6997033528567133`*^9, 
+   3.7008505678568974`*^9, 3.700917121452846*^9, 3.701001933000463*^9, 
+   3.701085857125153*^9, 3.701448680119714*^9, 3.7020392573781567`*^9, 
+   3.7034218669305773`*^9, 3.703421934567877*^9, 3.703519865374112*^9, 
+   3.7036064851745043`*^9, {3.70448170022295*^9, 3.704481704961604*^9}, 
+   3.70457439481674*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Get", "[", "\"\<../../../neupackage/mma/dispersion-relation.wl\>\"",
+   "]"}]], "Input",
+ CellChangeTimes->{{3.696615294555633*^9, 3.696615315490549*^9}, {
+  3.7045743997037067`*^9, 3.704574400009746*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Define Spectra", "Chapter",
+ CellChangeTimes->{{3.704574434185836*^9, 3.7045744361757193`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spectWC1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectWC2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", "0.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectWC3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectWC4", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7034232459978952`*^9, 3.703423248762385*^9}, {
+  3.703450801033053*^9, 3.703450830209505*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spectC1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "0.1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectC2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "0.5"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectC3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectC4", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "1.5"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703421687901387*^9, 3.703421697285653*^9}, {
+   3.7034218806506863`*^9, 3.703421939586574*^9}, {3.703422182382547*^9, 
+   3.7034221830845137`*^9}, 3.703423239388588*^9, {3.7034509203539143`*^9, 
+   3.70345094667286*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"spectC5", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "15"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectC6", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", 
+       RowBox[{"-", "0.01"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spectC7", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.3"}]}], "}"}], ",", "0.01"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3"}], ",", "1"}], "}"}], ",", "1"}], "}"}]}], 
+    "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703878917814114*^9, 3.703878921080255*^9}, {
+  3.704027900058696*^9, 3.704027914577971*^9}, {3.704028309738585*^9, 
+  3.7040283140405416`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Test NSolve/Solve", "Chapter",
+ CellChangeTimes->{{3.704574438360517*^9, 3.704574447399929*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mzaplsadata", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"omegareal", ",", 
+      RowBox[{"k", "/.", 
+       RowBox[{"NSolve", "[", 
+        RowBox[{
+         RowBox[{"ConAxialSymOmegaNMZApEqnLHSComplex", "[", 
+          RowBox[{"omegareal", ",", "k", ",", "spectC1"}], "]"}], ",", "k"}], 
+        "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"omegareal", ",", 
+      RowBox[{"-", "4.499"}], ",", "4.499", ",", "0.01"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.704574417469593*^9, 3.7045744174854803`*^9}, {
+  3.70457446637218*^9, 3.704574483678998*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NSolve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \[NoBreak]\\!\\(NSolve\
+\\)\[NoBreak], so some solutions may not be found; use Reduce for complete \
+solution information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NSolve\\\", ButtonNote -> \\\"NSolve::ifun\\\"]\\)\
+\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.704574486340605*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NSolve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \[NoBreak]\\!\\(NSolve\
+\\)\[NoBreak], so some solutions may not be found; use Reduce for complete \
+solution information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NSolve\\\", ButtonNote -> \\\"NSolve::ifun\\\"]\\)\
+\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.704574486400814*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NSolve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \[NoBreak]\\!\\(NSolve\
+\\)\[NoBreak], so some solutions may not be found; use Reduce for complete \
+solution information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NSolve\\\", ButtonNote -> \\\"NSolve::ifun\\\"]\\)\
+\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.704574486469445*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(NSolve :: \
+ifun\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.704574486500929*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "4.499`"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"InverseFunction", "[", 
+                RowBox[{
+                "ConAxialSymOmegaNMZApEqnLHSComplex", ",", "2", ",", "3"}], 
+                "]"}], "[", 
+               RowBox[{
+                RowBox[{"-", "4.499`"}], ",", "0", ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], ",", 
+                    RowBox[{"-", "0.3`"}]}], "}"}], ",", 
+                    RowBox[{"-", "0.1`"}]}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.3`"}], ",", "1"}], "}"}], ",", "1"}], 
+                   "}"}]}], "}"}]}], "]"}], "}"}]}], "}"}], ",", 
+           TemplateBox[{"898"},
+            "OutputSizeLimit`Skeleton",
+            DisplayFunction->(FrameBox[
+              RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}],
+               Background -> GrayLevel[0.75], 
+              BaseStyle -> {
+               "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
+              ContentPadding -> False, FrameMargins -> 1, FrameStyle -> 
+              GrayLevel[0.75], RoundingRadius -> 7]& )], ",", 
+           RowBox[{"{", 
+            RowBox[{"4.4910000000000005`", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"InverseFunction", "[", 
+                RowBox[{
+                "ConAxialSymOmegaNMZApEqnLHSComplex", ",", "2", ",", "3"}], 
+                "]"}], "[", 
+               RowBox[{"4.4910000000000005`", ",", "0", ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], ",", 
+                    RowBox[{"-", "0.3`"}]}], "}"}], ",", 
+                    RowBox[{"-", "0.1`"}]}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.3`"}], ",", "1"}], "}"}], ",", "1"}], 
+                   "}"}]}], "}"}]}], "]"}], "}"}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{73., {3., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarCategory",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{61., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 216, 26542164749185504606, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{68., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 216, 26542164749185504606, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{51., {0., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            Identity, 216, 26542164749185504606, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{92., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Background->RGBColor[0.9657, 0.9753, 0.9802],
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[216]]], "Output",
+ CellChangeTimes->{3.7045744878507357`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 755},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 99, 2, 36, "Input"],
+Cell[682, 26, 880, 13, 36, "Output"]
+}, Open  ]],
+Cell[1577, 42, 229, 4, 36, "Input"],
+Cell[CellGroupData[{
+Cell[1831, 50, 101, 1, 81, "Chapter"],
+Cell[1935, 53, 1834, 66, 99, "Input"],
+Cell[3772, 121, 2050, 72, 99, "Input"],
+Cell[5825, 195, 1501, 53, 78, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7363, 253, 102, 1, 81, "Chapter"],
+Cell[CellGroupData[{
+Cell[7490, 258, 633, 17, 57, "Input"],
+Cell[8126, 277, 522, 11, 29, "Message"],
+Cell[8651, 290, 522, 11, 29, "Message"],
+Cell[9176, 303, 522, 11, 29, "Message"],
+Cell[9701, 316, 529, 11, 29, "Message"],
+Cell[10233, 329, 9662, 250, 175, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

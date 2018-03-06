@@ -1,0 +1,2 @@
+#/bin/sh
+(nohup math -run "<<landscape-rok-sawyer-spectrum-S-01.m" &> landscape-rok-sawyer-spectrum-S-01.out) ; (nohup math -run "<<landscape-rok-garching-spectrum-01.m" &> landscape-rok-garching-spectrum-01.out) ; (nohup math -run "<<landscape-rok-cos-c-spectrum-01.m" &> landscape-rok-cos-c-spectrum-01.out) ; (nohup math -run "<<landscape-rok-cos-wc-spectrum-01.m" &> landscape-rok-cos-wc-spectrum-01.out) ; (nohup math -run "<<landscape-rok-sawyer-spectrum-SC1-01.m" &> landscape-rok-sawyer-spectrum-SC1-01.out)
